@@ -14,7 +14,8 @@
 List all kubernetes nodes using `kubectl get nodes` command and paste the output below
 	    
 ```
-<Paste output below>
+NAME       STATUS   ROLES           AGE   VERSION
+minikube   Ready    control-plane   56m   v1.28.3
 
 ```
 
@@ -23,22 +24,32 @@ describe one kubernetes node using `kubectl describe node/<node-name>` command a
 
 **Number of cpu**:     
 ```
-<Paste section here>
+ cpu:                12
 ```
 **Hostname**: 
 ```
-<Paste section here>
+Hostname:    minikube
 ```
 **Cpu and Memory usage**:
 ```
-<Paste section here>
+Capacity:
+  cpu:                12
+  ephemeral-storage:  1055762868Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             7527572Ki
+  pods:               110
 ```
 
 ## Task 3
 List all kubernetes namespaces using `kubectl get namespace` command and paste the output below
 	    
 ```
-<Paste output below>
+NAME              STATUS   AGE
+default           Active   60m
+kube-node-lease   Active   60m
+kube-public       Active   60m
+kube-system       Active   60m
 
 ```
 
@@ -46,7 +57,14 @@ List all kubernetes namespaces using `kubectl get namespace` command and paste t
 List all the pods in '*kube-system*' namespace using `kubectl get pods -n <namespce command>`
 	    
 ```
-<Paste output below>
+NAME                               READY   STATUS    RESTARTS      AGE
+coredns-5dd5756b68-kjjpb           1/1     Running   0             61m
+etcd-minikube                      1/1     Running   0             61m
+kube-apiserver-minikube            1/1     Running   0             61m
+kube-controller-manager-minikube   1/1     Running   0             61m
+kube-proxy-xqc7v                   1/1     Running   0             61m
+kube-scheduler-minikube            1/1     Running   0             61m
+storage-provisioner                1/1     Running   1 (60m ago)   61m
 
 ```
 
@@ -57,7 +75,8 @@ Create a namespace with name `my-namespace` using `kubectl create namespace <nam
 
 List all namespaces like  in **Task 3**  and paste output below
 ```
-<Paste output below>
+
+namespace/my-namespace created
 
 ```
 ## Task 6
