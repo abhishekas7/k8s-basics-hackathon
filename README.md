@@ -184,7 +184,11 @@ Refference:
 https://kubernetes.io/docs/reference/kubectl/generated/kubectl_port-forward/
 
 ```
-<Paste the output of port-forward command below>
+Forwarding from 127.0.0.1:80 -> 80
+Forwarding from [::1]:80 -> 80
+Forwarding from 127.0.0.1:9090 -> 9090
+Forwarding from [::1]:9090 -> 9090
+
 
 ```
 
