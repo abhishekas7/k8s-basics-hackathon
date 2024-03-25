@@ -78,6 +78,13 @@ List all namespaces like  in **Task 3**  and paste output below
 
 namespace/my-namespace created
 
+NAME              STATUS   AGE
+default           Active   64m
+kube-node-lease   Active   64m
+kube-public       Active   64m
+kube-system       Active   64m
+my-namespace      Active   2m51s
+
 ```
 ## Task 6
 
