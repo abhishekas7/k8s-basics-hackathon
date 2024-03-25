@@ -104,13 +104,15 @@ pod/nginx created
 
 List all the pods in the namespace `my-namespace` using `kubectl get pods -n <namespace>` command
 ```
-<Paste output here>
+NAME    READY   STATUS    RESTARTS   AGE
+nginx   1/1     Running   0          3m41s
 
 ```
 
 Get extra details about the pods in the namespace `my-namespace` using `kubectl get pods -n <namespace> -o wide` command
 ```
-<Paste output here>
+NAME    READY   STATUS    RESTARTS   AGE     IP           NODE       NOMINATED NODE   READINESS GATES
+nginx   1/1     Running   0          4m39s   10.244.0.4   minikube   <none>           <none>
 
 ```
 
@@ -120,7 +122,57 @@ Get details about `nginx` pod in `my-namespace`  using `kubectl describe pods/<p
 
 
 ```
-<Paste the output of describe command below>
+Name:             nginx
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Mon, 25 Mar 2024 15:50:25 +0530
+Labels:           <none>
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.3
+IPs:
+  IP:  10.244.0.3
+Containers:
+  nginx:
+    Container ID:   docker://b556a295d23f8614d9930ba66d623db199622990ced286573e9ac226f1271739
+    Image:          nginx:1.14.2
+    Image ID:       docker-pullable://nginx@sha256:f7988fb6c02e0ce69257d9bd9cf37ae20a60f1df7563c3a2a6abe24160306b8d
+    Port:           80/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Mon, 25 Mar 2024 15:50:46 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-kd8pv (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  kube-api-access-kd8pv:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  12m   default-scheduler  Successfully assigned default/nginx to minikube
+  Normal  Pulling    11m   kubelet            Pulling image "nginx:1.14.2"
+  Normal  Pulled     11m   kubelet            Successfully pulled image "nginx:1.14.2" in 18.195s (18.195s including waiting)
+  Normal  Created    11m   kubelet            Created container nginx
+  Normal  Started    11m   kubelet            Started container nginx
 
 ```
 
